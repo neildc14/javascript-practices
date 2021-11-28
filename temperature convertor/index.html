@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container-all container">
+        <nav class="container">
+            <div>
+                <img src="icons/noto_thermometer.svg" alt="thermometer icon">
+            </div>
+            <div>
+                <img src="icons/Group.svg" alt="menubar">
+            </div>
+        </nav>
+
+        <main class="container">
+            <h1>Temperature Converter</h1>
+            <section class="container"> 
+                <div class="input">
+                    <input type="text" id="myInput" name="name" autocomplete="off" oninput="myFunction()">
+                </div>
+                <img class="equals" src="icons/Vector (1).svg" alt="">
+                <div class="output">
+                    <output for="name" id="demo"></output>
+                </div>
+            </section>
+            <div class="pick container">
+                <select name="input tempt" id="tempUse" onchange="listSelect()">
+                  <option id="fahrenheit" value="Fahrenheit">Fahrenheit</option>
+                  <option id="celsius" value="Celcius">Celsius</option>
+                  <option id="kelvin" value="Kelvin">Kelvin</option>
+                </select>
+                <select name="output tempt" id="tempUse">
+                    <option id="akelvin" value="Kelvin">Kelvin</option>
+                    <option id="acelsius" value="Celsius">Celcius</option>
+                    <option id="afahrenheit" value="Fahrenheit">Fahrenheit</option>
+                  </select> 
+            </div>      
+            <div class="formula container">
+                <h2>Formula:</h2>
+                <p>(°F − 32) × 5/9 + 273.15 = K</p>
+                <hr>
+            </div>      
+        </main>
+        </div>
+    <script>
+
+function myFunction() 
+    {
+        var theList = document.getElementById('tempUse');
+        var theValue = theList.options[theList.selectedIndex].value;
+        
+        if (theValue = 'Fahrenheit')   
+        {
+            let fah = document.getElementById("myInput").value - 32;
+            var y = fah * 5 / 9 + 273.15;
+            var z = y.toFixed(2);
+      
+    }  else if(theValue = 'Kelvin') {
+
+        let kel = document.getElementById("myInput").value + 273.15;
+            var z = kel.toFixed(2);
+    }  
+
+     return document.getElementById("demo").innerHTML = + z;
+}
+
+
+    
+
+
+    //         function myFunction(celcius) {
+//     var x = document.getElementById("myInput").value - 32;
+//     var y = x * 5 / 9 + 273.15;
+//     var z = y.toFixed(2);
+//     document.getElementById("demo").innerHTML = + z;
+//   }
+
+//   var tempToConvert = document.getElementById('fahrenheit').value="Fahrenheit";
+
+//     if(tempToConvert = true){
+//         var 
+//     }
+//     function myFunction() {
+//         let tempToConvert = document.getElementById('tempUse').value="Fahrenheit";
+//         if(tempToConvert = "Fahrnheit"){
+//             var x = document.getElementById("myInput").value - 32;
+//             var y = x * 5 / 9 + 273.15;
+//             var z = y.toFixed(2);
+//     }  
+   
+
+   
+//     document.getElementById("demo").innerHTML = + z;
+//   }
+ 
+    </script>
+</body>
+
+</html>

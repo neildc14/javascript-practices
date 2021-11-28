@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <button type="button" id="menuBtn">Menu</button>
+    <div id="menu">
+        <ul>
+            <li>link</li>
+            <li>link</li>
+            <li>link</li>
+            <li>link</li>
+            <li>link</li>
+        </ul>
+    </div>
+
+    <script>
+
+        let menuBtn = document.getElementById('menuBtn');
+        let  menu = document.getElementById('menu');
+        let menuStatus = false;
+
+        menu.style.marginLeft = "-300px";
+
+        function menuToggle() {
+            if (menuStatus == false) {
+                menu.style.marginLeft = "0px";
+                menuStatus = true;
+            } else if (menuStatus == true) {
+                menu.style.marginLeft = "-300px";
+                menuStatus = false;
+            }
+
+        }
+
+        menuBtn.onclick = menuToggle; //dont add () otherwise the code instantly run without clicking the menu
+
+    </script>
+</body>
+
+</html>

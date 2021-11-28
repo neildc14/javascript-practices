@@ -1,0 +1,29 @@
+*{
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgb(223, 222, 222);
+}
+
+button  {
+    padding: 10px;
+    color: #fff;
+    background: #000000;
+}
+
+div{
+    width: 200px;
+    height: 100vh;
+    background-color: white;
+    
+}
+
+li{
+    width: 100%;
+    background-color: black;
+    color: white;
+    margin-bottom: 1px;
+    padding: 20px;
+}

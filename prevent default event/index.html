@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prevent Default</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <form action="script.php" class="test-form" method="post">
+            <input type="text" name="bla" placeholder="blabla" >
+            <button type="submit" name="button"> Click me!</button>
+        </form>
+        <a class="test-btn" href="#">Click to change me</a>
+        <a class="an" href="https://www.youtube.com" id="ytLink">youtube</a>
+        <span>Enable Link: <input type="checkbox" id="checkbox"> </span>
+        <span id="confirm" class="confirm"></span>
+    </main>
+
+    <script>
+        let btn = document.querySelector(".test-btn");
+        let form = document.querySelector(".test-form");
+
+        function changeBtnText(e, name){
+            e.preventDefault();
+            btn.innerHTML = "YAY" + " " + name;
+        }
+        
+        btn.addEventListener('click', function(e){
+            changeBtnText(e, 'neil');
+
+        });
+        btn.addEventListener('click', function(e){
+            btn.style.backgroundColor = "yellow";
+        });
+
+
+        function stopFormSubmit(e){
+            e.preventDefault();
+        }
+
+
+        form.onclick =  stopFormSubmit;
+
+        const ytLink = document.getElementById('ytLink');
+        let confirm = document.getElementById('confirm');
+        let cofirmTrue = true;
+        
+        ytLink.addEventListener('click', function(e){
+            if(!checkbox.checked){
+                e.preventDefault();
+                confirm.innerHTML = 'Please confirm';
+            }  else if(checkbox.checked){
+                confirm.innerHTML = 'Access Granted';
+            }
+        });
+
+    </script>
+</body>
+</html>
